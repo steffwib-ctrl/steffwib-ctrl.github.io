@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BalconyPro - Modern Balcony Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .features {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .gallery {
+            padding: 4rem 0;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .specs {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .specs h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌿 BalconyPro</h1>
+        <p>The Future of Outdoor Living</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#specs">Specifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Experience Modern Outdoor Living</h2>
+                <p>Introducing BalconyPro – the revolutionary balcony table that transforms your outdoor space into a stylish, functional sanctuary. Designed for contemporary living, our table combines elegant aesthetics with cutting-edge functionality.</p>
+                <a href="#features" class="cta-button">Discover More</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&h=600&fit=crop" alt="Modern balcony table in contemporary setting">
+            </div>
+        </section>
+    </div>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Premium Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Weather Resistant</h3>
+                    <p>Built with premium materials that withstand extreme weather conditions, UV rays, and moisture. Perfect for any climate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Crafted from sustainable, recyclable materials. Environmentally conscious design for a greener future.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern Design</h3>
+                    <p>Sleek, contemporary aesthetics that complement any balcony style. Available in multiple colors and finishes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Space-Saving</h3>
+                    <p>Compact design with smart storage solutions. Perfect for small balconies and urban living spaces.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>High Load Capacity</h3>
+                    <p>Supports up to 100kg. Sturdy construction ensures durability and reliability for years to come.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧹</div>
+                    <h3>Easy Maintenance</h3>
+                    <p>Simple to clean and maintain. Just wipe with a damp cloth – no special care required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=400&fit=crop" alt="Balcony table in morning light">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28974268df0?w=500&h=400&fit=crop" alt="Stylish outdoor furniture setup">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1572540591027-4ffc5e9d0b0e?w=500&h=400&fit=crop" alt="Modern balcony design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs" id="specs">
+        <div class="container">
+            <h2>Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Dimensions</h3>
+                    <p>120cm × 60cm × 45cm</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Weight</h3>
+                    <p>8.5 kg (easy to move)</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Material</h3>
+                    <p>Premium Aluminum & Composite</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Load Capacity</h3>
+                    <p>Up to 100 kg</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Warranty</h3>
+                    <p>5-Year Coverage</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Color Options</h3>
+                    <p>Modern Gray, Midnight Black, Arctic White</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2026 BalconyPro. All rights reserved.</p>
+            <p>Email: info@balconypro.com | Phone: +1 (555) 123-4567</p>
+        </div>
+    </footer>
+</body>
+</html>
