@@ -20,7 +20,7 @@
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
         }
 
@@ -63,7 +63,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -86,6 +86,7 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: #555;
+            line-height: 1.8;
         }
 
         .hero-image img {
@@ -175,17 +176,38 @@
             gap: 1.5rem;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
             transition: transform 0.3s;
         }
 
-        .gallery-item img:hover {
+        .gallery-item:hover img {
             transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
         }
 
         .specs {
@@ -220,16 +242,108 @@
             opacity: 0.95;
         }
 
+        .details {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .details h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .details-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-text h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .details-text h3:first-child {
+            margin-top: 0;
+        }
+
+        .details-text p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .details-text ul {
+            list-style-position: inside;
+            color: #555;
+        }
+
+        .details-text li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .details-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .benefits {
+            padding: 4rem 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             margin-top: 4rem;
         }
 
         @media (max-width: 768px) {
             .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .details-content {
                 grid-template-columns: 1fr;
             }
 
@@ -257,6 +371,8 @@
         <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#benefits">Benefits</a></li>
             <li><a href="#specs">Specifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -267,10 +383,11 @@
             <div class="hero-content">
                 <h2>Experience Modern Outdoor Living</h2>
                 <p>Introducing BalconyPro – the revolutionary balcony table that transforms your outdoor space into a stylish, functional sanctuary. Designed for contemporary living, our table combines elegant aesthetics with cutting-edge functionality.</p>
-                <a href="#features" class="cta-button">Discover More</a>
+                <p>Perfect for morning coffee, evening meals, or simply enjoying the view. Our balcony table is engineered to withstand any climate while maintaining its pristine appearance.</p>
+                <a href="#gallery" class="cta-button">Explore Our Collection</a>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&h=600&fit=crop" alt="Modern balcony table in contemporary setting">
+                <img src="https://images.unsplash.com/photo-1597457347222-ffed39eb1abc?w=600&h=600&fit=crop" alt="Modern balcony table setup">
             </div>
         </section>
     </div>
@@ -282,32 +399,32 @@
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Weather Resistant</h3>
-                    <p>Built with premium materials that withstand extreme weather conditions, UV rays, and moisture. Perfect for any climate.</p>
+                    <p>Built with premium materials that withstand extreme weather conditions, UV rays, and moisture. Perfect for any climate year-round.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">♻️</div>
                     <h3>Eco-Friendly</h3>
-                    <p>Crafted from sustainable, recyclable materials. Environmentally conscious design for a greener future.</p>
+                    <p>Crafted from sustainable, recyclable materials. Environmentally conscious design for a greener future without compromising quality.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3>Modern Design</h3>
-                    <p>Sleek, contemporary aesthetics that complement any balcony style. Available in multiple colors and finishes.</p>
+                    <p>Sleek, contemporary aesthetics that complement any balcony style. Available in multiple colors and finishes to match your taste.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📦</div>
                     <h3>Space-Saving</h3>
-                    <p>Compact design with smart storage solutions. Perfect for small balconies and urban living spaces.</p>
+                    <p>Compact design with smart storage solutions. Perfect for small balconies and urban living spaces without sacrificing functionality.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💪</div>
                     <h3>High Load Capacity</h3>
-                    <p>Supports up to 100kg. Sturdy construction ensures durability and reliability for years to come.</p>
+                    <p>Supports up to 100kg. Sturdy construction ensures durability and reliability for years to come with daily use.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🧹</div>
                     <h3>Easy Maintenance</h3>
-                    <p>Simple to clean and maintain. Just wipe with a damp cloth – no special care required.</p>
+                    <p>Simple to clean and maintain. Just wipe with a damp cloth – no special care or treatments required.</p>
                 </div>
             </div>
         </div>
@@ -315,16 +432,104 @@
 
     <section class="gallery" id="gallery">
         <div class="container">
-            <h2>Gallery</h2>
+            <h2>Gallery - See BalconyPro in Action</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=400&fit=crop" alt="Balcony table in morning light">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&h=400&fit=crop" alt="Modern balcony table in sunlight">
+                    <div class="gallery-caption">Sunlit Elegance</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28974268df0?w=500&h=400&fit=crop" alt="Stylish outdoor furniture setup">
+                    <img src="https://images.unsplash.com/photo-1585399363073-c79f6d0fe5da?w=500&h=400&fit=crop" alt="Balcony table with city view">
+                    <div class="gallery-caption">Urban Living</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1572540591027-4ffc5e9d0b0e?w=500&h=400&fit=crop" alt="Modern balcony design">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=400&fit=crop" alt="Minimalist balcony table setup">
+                    <div class="gallery-caption">Minimalist Style</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=400&fit=crop" alt="Balcony table for dining">
+                    <div class="gallery-caption">Perfect Dining</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=400&fit=crop" alt="Compact balcony table">
+                    <div class="gallery-caption">Space-Saving Design</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611025783263-97c00e1e2855?w=500&h=400&fit=crop" alt="Balcony table with plants">
+                    <div class="gallery-caption">Garden Ambiance</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596178065887-ba531c29f37f?w=500&h=400&fit=crop" alt="Contemporary balcony table">
+                    <div class="gallery-caption">Contemporary Edge</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1567327613485-f12e802e059d?w=500&h=400&fit=crop" alt="Luxury balcony setup">
+                    <div class="gallery-caption">Luxury Living</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64585?w=500&h=400&fit=crop" alt="Balcony table at sunset">
+                    <div class="gallery-caption">Sunset Views</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details" id="details">
+        <div class="container">
+            <h2>Why Choose BalconyPro?</h2>
+            <div class="details-content">
+                <div class="details-text">
+                    <h3>Superior Quality & Durability</h3>
+                    <p>Our BalconyPro tables are manufactured with precision engineering and premium materials. Each piece undergoes rigorous quality testing to ensure it meets our exacting standards.</p>
+                    
+                    <h3>Innovative Features</h3>
+                    <p>We've designed every aspect with the modern homeowner in mind:</p>
+                    <ul>
+                        <li>Reinforced aluminum frame for maximum strength</li>
+                        <li>UV-resistant composite surface</li>
+                        <li>Integrated cable management system</li>
+                        <li>Hidden storage compartments</li>
+                        <li>Foldable legs for easy storage</li>
+                        <li>Non-slip feet for safety</li>
+                    </ul>
+
+                    <h3>Perfect for Every Season</h3>
+                    <p>Whether it's scorching summer heat, heavy rain, or freezing winter, BalconyPro maintains its structural integrity and aesthetic appeal throughout the year.</p>
+                </div>
+                <div class="details-image">
+                    <img src="https://images.unsplash.com/photo-1572540591027-4ffc5e9d0b0e?w=600&h=600&fit=crop" alt="Detailed view of balcony table">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Key Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>💰 Cost-Effective</h3>
+                    <p>Premium quality at an accessible price point. Get luxury outdoor furniture without breaking the bank.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🔧 Easy Assembly</h3>
+                    <p>Comes with clear instructions and all necessary hardware. Most users can set up their table in under 30 minutes.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🌍 Sustainable</h3>
+                    <p>Made from recycled and recyclable materials. We're committed to reducing our environmental footprint.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎯 Versatile</h3>
+                    <p>Works as a dining table, coffee table, work desk, or plant stand. One table, endless possibilities.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>✨ Low Maintenance</h3>
+                    <p>No sanding, staining, or special treatments needed. Regular cleaning is all you need to keep it looking new.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🏆 Award-Winning</h3>
+                    <p>Recognized for innovation and design excellence. Join thousands of satisfied customers worldwide.</p>
                 </div>
             </div>
         </div>
@@ -332,7 +537,7 @@
 
     <section class="specs" id="specs">
         <div class="container">
-            <h2>Specifications</h2>
+            <h2>Technical Specifications</h2>
             <div class="specs-grid">
                 <div class="spec-item">
                     <h3>Dimensions</h3>
@@ -364,8 +569,10 @@
 
     <footer id="contact">
         <div class="container">
+            <h2>Get Your BalconyPro Today</h2>
             <p>&copy; 2026 BalconyPro. All rights reserved.</p>
-            <p>Email: info@balconypro.com | Phone: +1 (555) 123-4567</p>
+            <p style="margin-top: 1rem; font-size: 1.1rem;">📧 Email: info@balconypro.com | 📞 Phone: +1 (555) 123-4567</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Transform your balcony. Enhance your lifestyle. Choose BalconyPro.</p>
         </div>
     </footer>
 </body>
