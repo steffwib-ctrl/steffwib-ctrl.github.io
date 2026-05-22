@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RailDine - Modern Balcony Table</title>
+    <title>RailDine - Moderner Balkontisch</title>
     <style>
         * {
             margin: 0;
@@ -34,13 +34,49 @@
             opacity: 0.95;
         }
 
-        nav {
-            background: #fff;
+        .tab-buttons {
+            background: white;
             padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+        }
+
+        .tab-buttons .container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .tab-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-btn:hover {
+            opacity: 0.9;
+        }
+
+        .tab-btn.active {
+            opacity: 1;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 65px;
+            z-index: 99;
         }
 
         nav ul {
@@ -66,6 +102,14 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .hero {
@@ -358,222 +402,466 @@
             nav ul {
                 gap: 1rem;
             }
+
+            .tab-buttons .container {
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>🍽️ RailDine</h1>
-        <p>The Future of Outdoor Dining</p>
+        <p>Die Zukunft des Outdoor-Essens</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#specs">Specifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="tab-buttons">
+        <div class="container">
+            <button class="tab-btn active" onclick="switchTab('balcony')">🏠 Balkon</button>
+            <button class="tab-btn" onclick="switchTab('marine')">⛵ Marine</button>
+        </div>
+    </div>
 
-    <div class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Experience Modern Outdoor Living</h2>
-                <p>Introducing RailDine – the revolutionary balcony table that transforms your outdoor space into a stylish, functional sanctuary. Designed for contemporary living, our table combines elegant aesthetics with cutting-edge functionality.</p>
-                <p>Perfect for morning coffee, evening meals, or simply enjoying the view. Our balcony table is engineered to withstand any climate while maintaining its pristine appearance.</p>
-                <a href="#gallery" class="cta-button">Explore Our Collection</a>
+    <!-- BALKON TAB -->
+    <div id="balcony" class="tab-content active">
+        <nav>
+            <ul>
+                <li><a href="#balcony-features">Funktionen</a></li>
+                <li><a href="#balcony-gallery">Galerie</a></li>
+                <li><a href="#balcony-details">Details</a></li>
+                <li><a href="#balcony-benefits">Vorteile</a></li>
+                <li><a href="#balcony-specs">Spezifikationen</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Modernes Balkon-Esserlebnis</h2>
+                    <p>Entdecken Sie RailDine – den revolutionären Balkontisch, der Ihren Außenbereich in ein stilvolles, funktionales Heiligtum verwandelt. Speziell für zeitgenössisches Leben entwickelt.</p>
+                    <p>Perfekt für Morgenkaffee, Abendessen oder einfach nur um die Aussicht zu genießen. Unser Balkontisch ist so konstruiert, dass er jedem Klima standhält.</p>
+                    <a href="#balcony-gallery" class="cta-button">Unsere Kollektion erkunden</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=600&fit=crop" alt="Moderner Balkontisch">
+                </div>
+            </section>
+        </div>
+
+        <section class="features" id="balcony-features">
+            <div class="container">
+                <h2>Premium Funktionen</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Wetterbeständig</h3>
+                        <p>Gebaut mit Premium-Materialien, die extreme Wetterbedingungen, UV-Strahlen und Feuchtigkeit widerstehen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">♻️</div>
+                        <h3>Umweltfreundlich</h3>
+                        <p>Aus nachhaltigen, recycelbaren Materialien gefertigt. Umweltbewusste Gestaltung für eine grünere Zukunft.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Modernes Design</h3>
+                        <p>Elegante, zeitgenössische Ästhetik, die zu jedem Balkonstil passt. In mehreren Farben und Oberflächenfinishes erhältlich.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Platzsparend</h3>
+                        <p>Kompaktes Design mit intelligenten Lagerlösungen. Perfekt für kleine Balkone und städtisches Leben.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💪</div>
+                        <h3>Hohe Tragfähigkeit</h3>
+                        <p>Unterstützt bis zu 100kg. Robuste Konstruktion für jahrelange Zuverlässigkeit im täglichen Gebrauch.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧹</div>
+                        <h3>Einfache Wartung</h3>
+                        <p>Einfach zu reinigen und zu pflegen. Einfach mit einem feuchten Tuch abwischen – keine spezielle Pflege erforderlich.</p>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1597457347222-ffed39eb1abc?w=600&h=600&fit=crop" alt="Modern balcony table setup">
+        </section>
+
+        <section class="gallery" id="balcony-gallery">
+            <div class="container">
+                <h2>Galerie - RailDine Balkontische in Aktion</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&h=400&fit=crop" alt="Balkontisch in Sonnenlicht">
+                        <div class="gallery-caption">Sonnenbeglänzte Eleganz</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1585399363073-c79f6d0fe5da?w=500&h=400&fit=crop" alt="Balkontisch mit Stadtblick">
+                        <div class="gallery-caption">Urbanes Leben</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=400&fit=crop" alt="Minimalistischer Balkontisch">
+                        <div class="gallery-caption">Minimalistischer Stil</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=400&fit=crop" alt="Balkontisch zum Essen">
+                        <div class="gallery-caption">Perfektes Essen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=400&fit=crop" alt="Kompakter Balkontisch">
+                        <div class="gallery-caption">Platzsparendes Design</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1611025783263-97c00e1e2855?w=500&h=400&fit=crop" alt="Balkontisch mit Pflanzen">
+                        <div class="gallery-caption">Garten-Ambiente</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596178065887-ba531c29f37f?w=500&h=400&fit=crop" alt="Zeitgenössischer Balkontisch">
+                        <div class="gallery-caption">Zeitgenössisches Flair</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1567327613485-f12e802e059d?w=500&h=400&fit=crop" alt="Luxuriöser Balkon">
+                        <div class="gallery-caption">Luxusleben</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64585?w=500&h=400&fit=crop" alt="Balkontisch bei Sonnenuntergang">
+                        <div class="gallery-caption">Sonnenuntergangsblicke</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="details" id="balcony-details">
+            <div class="container">
+                <h2>Warum RailDine wählen?</h2>
+                <div class="details-content">
+                    <div class="details-text">
+                        <h3>Überlegene Qualität & Haltbarkeit</h3>
+                        <p>Unsere RailDine Balkontische werden mit Präzisionsingenieurwesen und Premium-Materialien hergestellt. Jedes Stück wird einer rigorosen Qualitätsprüfung unterzogen.</p>
+                        
+                        <h3>Innovative Funktionen</h3>
+                        <p>Wir haben jeden Aspekt mit dem modernen Hausbesitzer im Hinterkopf gestaltet:</p>
+                        <ul>
+                            <li>Verstärktes Aluminiumgestell für maximale Festigkeit</li>
+                            <li>UV-beständige Kompositoberfläche</li>
+                            <li>Integriertes Kabelmanagement-System</li>
+                            <li>Verborgene Lagerfächer</li>
+                            <li>Klappbare Beine zur einfachen Lagerung</li>
+                            <li>Rutschfeste Füße für Sicherheit</li>
+                        </ul>
+
+                        <h3>Perfekt für jede Jahreszeit</h3>
+                        <p>Ob glühende Sommerhitze, Starkregen oder Frost – RailDine behält seine strukturelle Integrität und Ästhetik das ganze Jahr über.</p>
+                    </div>
+                    <div class="details-image">
+                        <img src="https://images.unsplash.com/photo-1572540591027-4ffc5e9d0b0e?w=600&h=600&fit=crop" alt="Balkontisch Details">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits" id="balcony-benefits">
+            <div class="container">
+                <h2>Hauptvorteile</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>💰 Kosteneffektiv</h3>
+                        <p>Premium-Qualität zu erschwinglichem Preis. Erhalten Sie Luxus-Gartenmöbel, ohne die Bank zu sprengen.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🔧 Einfache Montage</h3>
+                        <p>Kommt mit klaren Anweisungen und allem notwendigen Hardware. Die meisten Benutzer können ihren Tisch in unter 30 Minuten aufstellen.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🌍 Nachhaltig</h3>
+                        <p>Aus recycelten und recycelbaren Materialien. Wir sind dem Schutz unseres ökologischen Fußabdrucks verpflichtet.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🎯 Vielseitig</h3>
+                        <p>Funktioniert als Esstisch, Couchtisch, Arbeitstisch oder Pflanzenständer. Ein Tisch, unendliche Möglichkeiten.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>✨ Wartungsarm</h3>
+                        <p>Keine Schleifen, Beizen oder spezielle Behandlungen erforderlich. Regelmäßiges Reinigen hält ihn wie neu aus.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🏆 Preisgekrönt</h3>
+                        <p>Anerkannt für Innovation und Designexzellenz. Schließen Sie sich tausenden zufriedenen Kunden weltweit an.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="specs" id="balcony-specs">
+            <div class="container">
+                <h2>Technische Spezifikationen</h2>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <h3>Abmessungen</h3>
+                        <p>120cm × 60cm × 45cm</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Gewicht</h3>
+                        <p>8,5 kg (leicht zu transportieren)</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Material</h3>
+                        <p>Premium Aluminium & Komposit</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Tragfähigkeit</h3>
+                        <p>Bis zu 100 kg</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Garantie</h3>
+                        <p>5-jährige Abdeckung</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Farboptionen</h3>
+                        <p>Modernes Grau, Mitternachtsschwarz, Arktisches Weiß</p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <section class="features" id="features">
+    <!-- MARINE TAB -->
+    <div id="marine" class="tab-content">
+        <nav>
+            <ul>
+                <li><a href="#marine-features">Funktionen</a></li>
+                <li><a href="#marine-gallery">Galerie</a></li>
+                <li><a href="#marine-details">Details</a></li>
+                <li><a href="#marine-benefits">Vorteile</a></li>
+                <li><a href="#marine-specs">Spezifikationen</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
         <div class="container">
-            <h2>Premium Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Weather Resistant</h3>
-                    <p>Built with premium materials that withstand extreme weather conditions, UV rays, and moisture. Perfect for any climate year-round.</p>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Professionelle Boot-Lösungen</h2>
+                    <p>Entdecken Sie RailDine Marine – speziell für Boote und Yachten entwickelt. Robust, wetterfest und elegant für das Leben auf dem Wasser.</p>
+                    <p>Perfekt für Deck-Dining, Entspannung und Unterhaltung auf Ihrer Yacht oder Ihrem Boot. Engineering auf höchstem Niveau für die Meere.</p>
+                    <a href="#marine-gallery" class="cta-button">Unsere Marine-Kollektion erkunden</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">♻️</div>
-                    <h3>Eco-Friendly</h3>
-                    <p>Crafted from sustainable, recyclable materials. Environmentally conscious design for a greener future without compromising quality.</p>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=600&fit=crop" alt="Luxusboot mit Deck">
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Modern Design</h3>
-                    <p>Sleek, contemporary aesthetics that complement any balcony style. Available in multiple colors and finishes to match your taste.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Space-Saving</h3>
-                    <p>Compact design with smart storage solutions. Perfect for small balconies and urban living spaces without sacrificing functionality.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💪</div>
-                    <h3>High Load Capacity</h3>
-                    <p>Supports up to 100kg. Sturdy construction ensures durability and reliability for years to come with daily use.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧹</div>
-                    <h3>Easy Maintenance</h3>
-                    <p>Simple to clean and maintain. Just wipe with a damp cloth – no special care or treatments required.</p>
+            </section>
+        </div>
+
+        <section class="features" id="marine-features">
+            <div class="container">
+                <h2>Marine Premium Funktionen</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Salzwasserbeständig</h3>
+                        <p>Speziell behandelt gegen Salzwasserkorriosion. Hält auch in den anspruchsvollsten Meeresumgebungen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚓</div>
+                        <h3>Rutschfest</h3>
+                        <p>Marinespezifische rutschfeste Oberfläche. Sicherheit ist unsere höchste Priorität auf dem Wasser.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Yacht-Design</h3>
+                        <p>Elegantes Design, das auf modernen Yachten und Booten perfekt aussieht. Premium-Oberflächenfinish.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Platzsparend</h3>
+                        <p>Optimiert für begrenzte Bootsfläche. Platzsparende Konstruktion ohne Kompromiße bei Funktionalität.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💪</div>
+                        <h3>Marine-Grad Festigkeit</h3>
+                        <p>Verstärkt für Schiffsbedingungen. Hält extremen Bedingungen und Bewegungen stand.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧹</div>
+                        <h3>Einfache Seepflege</h3>
+                        <p>Salzwasser-freundliche Reinigung. Schnell und einfach sauber zu halten, auch bei langen Reisen.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2>Gallery - See RailDine in Action</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&h=400&fit=crop" alt="Modern balcony table in sunlight">
-                    <div class="gallery-caption">Sunlit Elegance</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1585399363073-c79f6d0fe5da?w=500&h=400&fit=crop" alt="Balcony table with city view">
-                    <div class="gallery-caption">Urban Living</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=400&fit=crop" alt="Minimalist balcony table setup">
-                    <div class="gallery-caption">Minimalist Style</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=400&fit=crop" alt="Balcony table for dining">
-                    <div class="gallery-caption">Perfect Dining</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=400&fit=crop" alt="Compact balcony table">
-                    <div class="gallery-caption">Space-Saving Design</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1611025783263-97c00e1e2855?w=500&h=400&fit=crop" alt="Balcony table with plants">
-                    <div class="gallery-caption">Garden Ambiance</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1596178065887-ba531c29f37f?w=500&h=400&fit=crop" alt="Contemporary balcony table">
-                    <div class="gallery-caption">Contemporary Edge</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1567327613485-f12e802e059d?w=500&h=400&fit=crop" alt="Luxury balcony setup">
-                    <div class="gallery-caption">Luxury Living</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64585?w=500&h=400&fit=crop" alt="Balcony table at sunset">
-                    <div class="gallery-caption">Sunset Views</div>
+        <section class="gallery" id="marine-gallery">
+            <div class="container">
+                <h2>Galerie - RailDine Marine in Aktion</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=400&fit=crop" alt="Luxusboot">
+                        <div class="gallery-caption">Luxusyacht</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1567427282708-c6e7d1cd7cff?w=500&h=400&fit=crop" alt="Boot bei Sonnenuntergang">
+                        <div class="gallery-caption">Sonnenuntergang auf See</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=500&h=400&fit=crop" alt="Segelboot">
+                        <div class="gallery-caption">Segelboot</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop" alt="Yacht im Hafen">
+                        <div class="gallery-caption">Yacht im Hafen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=500&h=400&fit=crop" alt="Motorboot">
+                        <div class="gallery-caption">Modernes Motorboot</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=500&h=400&fit=crop" alt="Deck-Bereich">
+                        <div class="gallery-caption">Luxus Deck</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?w=500&h=400&fit=crop" alt="Yacht Dining">
+                        <div class="gallery-caption">Yacht Dining</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=400&fit=crop" alt="Offenes Meer">
+                        <div class="gallery-caption">Offenes Meer</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=500&h=400&fit=crop" alt="Bootsleben">
+                        <div class="gallery-caption">Leben auf dem Wasser</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="details" id="details">
-        <div class="container">
-            <h2>Why Choose RailDine?</h2>
-            <div class="details-content">
-                <div class="details-text">
-                    <h3>Superior Quality & Durability</h3>
-                    <p>Our RailDine tables are manufactured with precision engineering and premium materials. Each piece undergoes rigorous quality testing to ensure it meets our exacting standards.</p>
-                    
-                    <h3>Innovative Features</h3>
-                    <p>We've designed every aspect with the modern homeowner in mind:</p>
-                    <ul>
-                        <li>Reinforced aluminum frame for maximum strength</li>
-                        <li>UV-resistant composite surface</li>
-                        <li>Integrated cable management system</li>
-                        <li>Hidden storage compartments</li>
-                        <li>Foldable legs for easy storage</li>
-                        <li>Non-slip feet for safety</li>
-                    </ul>
+        <section class="details" id="marine-details">
+            <div class="container">
+                <h2>Marine Exzellenz</h2>
+                <div class="details-content">
+                    <div class="details-text">
+                        <h3>Schiffszertifizierte Qualität</h3>
+                        <p>RailDine Marine wird nach internationalen Schiffsnormen hergestellt. Jede Komponente ist für die raue Meeresumgebung optimiert.</p>
+                        
+                        <h3>Fortgeschrittene Marine-Funktionen</h3>
+                        <p>Entwickelt speziell für Boote und Yachten:</p>
+                        <ul>
+                            <li>Salzwasser-korrosionsbeständige Materialien</li>
+                            <li>Marine-grade rutschfeste Oberfläche</li>
+                            <li>Integriertes Wasserablaufsystem</li>
+                            <li>UV-stabile Marinelacke</li>
+                            <li>Schnelle Montage für Boote</li>
+                            <li>Einfache Demontage für Transport</li>
+                        </ul>
 
-                    <h3>Perfect for Every Season</h3>
-                    <p>Whether it's scorching summer heat, heavy rain, or freezing winter, RailDine maintains its structural integrity and aesthetic appeal throughout the year.</p>
-                </div>
-                <div class="details-image">
-                    <img src="https://images.unsplash.com/photo-1572540591027-4ffc5e9d0b0e?w=600&h=600&fit=crop" alt="Detailed view of balcony table">
+                        <h3>Ideal für Langfahrten</h3>
+                        <p>Ob Mittelmeer, Karibik oder offene See – RailDine Marine ist die perfekte Wahl für professionelle Skipper und private Yachteigner.</p>
+                    </div>
+                    <div class="details-image">
+                        <img src="https://images.unsplash.com/photo-1567427282708-c6e7d1cd7cff?w=600&h=600&fit=crop" alt="Marine Details">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <h2>Key Benefits</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>💰 Cost-Effective</h3>
-                    <p>Premium quality at an accessible price point. Get luxury outdoor furniture without breaking the bank.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>🔧 Easy Assembly</h3>
-                    <p>Comes with clear instructions and all necessary hardware. Most users can set up their table in under 30 minutes.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>🌍 Sustainable</h3>
-                    <p>Made from recycled and recyclable materials. We're committed to reducing our environmental footprint.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>🎯 Versatile</h3>
-                    <p>Works as a dining table, coffee table, work desk, or plant stand. One table, endless possibilities.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>✨ Low Maintenance</h3>
-                    <p>No sanding, staining, or special treatments needed. Regular cleaning is all you need to keep it looking new.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>🏆 Award-Winning</h3>
-                    <p>Recognized for innovation and design excellence. Join thousands of satisfied customers worldwide.</p>
+        <section class="benefits" id="marine-benefits">
+            <div class="container">
+                <h2>Marine Vorteile</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>💰 Investitionswert</h3>
+                        <p>Premium-Marine-Ausrüstung zu vergleichbaren Preisen. Erhöht den Wert Ihrer Yacht.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🔧 Schnelle Installation</h3>
+                        <p>Marinespezifische Befestigung. Einfache Installation an Deck ohne Spezialkenntnisse.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🌊 Salzwasserresistent</h3>
+                        <p>Getestet in rauen Meeresumgebungen. Widersteht jahrelang Salzwasser und UV-Strahlung.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>⚓ Sicher & Stabil</h3>
+                        <p>Rutschfeste Oberfläche und sichere Befestigung. Perfekt für bewegte Bedingungen auf See.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>✨ Elegantes Design</h3>
+                        <p>Verbessert die Ästhetik jeder Yacht. Premium-Oberflächenfinish für luxuriöse Boote.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🏆 Professionelles Standard</h3>
+                        <p>Vertraut von Charter-Yachten und Privateignern. Marine-Industrie bewährt.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="specs" id="specs">
-        <div class="container">
-            <h2>Technical Specifications</h2>
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <h3>Dimensions</h3>
-                    <p>120cm × 60cm × 45cm</p>
-                </div>
-                <div class="spec-item">
-                    <h3>Weight</h3>
-                    <p>8.5 kg (easy to move)</p>
-                </div>
-                <div class="spec-item">
-                    <h3>Material</h3>
-                    <p>Premium Aluminum & Composite</p>
-                </div>
-                <div class="spec-item">
-                    <h3>Load Capacity</h3>
-                    <p>Up to 100 kg</p>
-                </div>
-                <div class="spec-item">
-                    <h3>Warranty</h3>
-                    <p>5-Year Coverage</p>
-                </div>
-                <div class="spec-item">
-                    <h3>Color Options</h3>
-                    <p>Modern Gray, Midnight Black, Arctic White</p>
+        <section class="specs" id="marine-specs">
+            <div class="container">
+                <h2>Marine Spezifikationen</h2>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <h3>Abmessungen</h3>
+                        <p>120cm × 60cm × 45cm</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Gewicht</h3>
+                        <p>9,2 kg (Marine-Verstärkung)</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Material</h3>
+                        <p>Marinealuminium & Komposit</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Tragfähigkeit</h3>
+                        <p>Bis zu 120 kg</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Garantie</h3>
+                        <p>10-jährige Marine-Garantie</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Zertifizierung</h3>
+                        <p>ISO 12944 - Meeresbedingungen</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer id="contact">
         <div class="container">
-            <h2>Get Your RailDine Today</h2>
-            <p>&copy; 2026 RailDine. All rights reserved.</p>
-            <p style="margin-top: 1rem; font-size: 1.1rem;">📧 Email: info@raildine.com | 📞 Phone: +1 (555) 123-4567</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Transform your balcony. Enhance your lifestyle. Choose RailDine.</p>
+            <h2>Holen Sie sich Ihr RailDine Heute</h2>
+            <p>&copy; 2026 RailDine. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 1rem; font-size: 1.1rem;">📧 E-Mail: info@raildine.de | 📞 Telefon: +49 (40) 123-4567</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Transformieren Sie Ihren Außenbereich. Verbessern Sie Ihren Lebensstil. Wählen Sie RailDine.</p>
         </div>
     </footer>
+
+    <script>
+        function switchTab(tabName) {
+            // Verstecke alle Tab-Inhalte
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Entferne Active-Klasse von allen Buttons
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Zeige den ausgewählten Tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Setze den Button als aktiv
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
