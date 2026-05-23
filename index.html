@@ -103,6 +103,31 @@
             margin-bottom: 0.5rem;
         }
 
+        .cta-button-group {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .interested-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1rem;
+        }
+
+        .interested-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+        }
+
         /* FEATURES - COMPACT */
         .highlights {
             background: white;
@@ -224,7 +249,124 @@
             opacity: 0.95;
         }
 
-        /* CONTACT FORM */
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-body p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* CONTACT SECTION */
         .contact-section {
             background: #f8f9fa;
             padding: 3rem 0;
@@ -247,18 +389,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
@@ -266,36 +396,14 @@
             border-radius: 5px;
             font-family: inherit;
             font-size: 1rem;
-        }
-
-        .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
 
-        .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
         /* FOOTER */
@@ -339,6 +447,15 @@
                 font-size: 1.6rem;
             }
 
+            .cta-button-group {
+                gap: 0.5rem;
+            }
+
+            .interested-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
             .highlight-grid {
                 grid-template-columns: 1fr;
             }
@@ -354,6 +471,11 @@
 
             .gallery-item {
                 height: 150px;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -376,6 +498,9 @@
         <div class="hero container">
             <h2>Moderner Balkontisch für Ihr Zuhause</h2>
             <p>Stilvoll, funktional und wetterfest – für perfekte Momente auf dem Balkon</p>
+            <div class="cta-button-group">
+                <button class="interested-btn" onclick="openInterestModal()">❤️ Ich bin interessiert</button>
+            </div>
         </div>
 
         <div class="container highlights">
@@ -384,22 +509,22 @@
                 <div class="highlight-card">
                     <div class="icon">📏</div>
                     <h4>Stufenlos ausziehbar</h4>
-                    <p>Flexible Größenanpassung für jeden Raum – von kompakt bis großzügig</p>
+                    <p>40cm - 160cm Länge – flexible Größenanpassung für jeden Raum</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">⬆️</div>
                     <h4>Stufenlos höhenverstellbar</h4>
-                    <p>Perfekte Arbeitshöhe von 40-80cm – ergonomisch für alle</p>
+                    <p>Bar-Stehtisch bis Lounge-Tisch – perfekte Arbeitshöhe für alle</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">📦</div>
-                    <h4>Einklappbar</h4>
-                    <p>Platzsparendes Design – schnell verstaut, wenig Lagerplatz</p>
+                    <h4>Einklappbar auf 25cm</h4>
+                    <p>Im eingeklappten Zustand nur 25cm breit – platzsparend verstaut</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">🔒</div>
-                    <h4>Stabile Befestigung</h4>
-                    <p>Sichere Verankerung am Geländer – sicherer Stand in jeder Situation</p>
+                    <h4>Alle Geländetypen</h4>
+                    <p>Befestigung an allen gängigen Geländetypen/Railings möglich</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">🛡️</div>
@@ -436,7 +561,12 @@
                     <div class="detail-item">
                         <div class="icon">📐</div>
                         <h4>Abmessungen</h4>
-                        <p>80-120cm × 40-60cm</p>
+                        <p>40-160cm × H verstellbar</p>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">📦</div>
+                        <h4>Eingeklappt</h4>
+                        <p>Nur 25cm breit</p>
                     </div>
                     <div class="detail-item">
                         <div class="icon">⚖️</div>
@@ -448,11 +578,6 @@
                         <h4>Garantie</h4>
                         <p>5 Jahre Abdeckung</p>
                     </div>
-                    <div class="detail-item">
-                        <div class="icon">🎨</div>
-                        <h4>Farben</h4>
-                        <p>3 Premium-Varianten</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -463,6 +588,9 @@
         <div class="hero container">
             <h2>Marine-Tisch für Ihr Boot oder Ihre Yacht</h2>
             <p>Professionelle Lösung für Deck und Railing – immer einsatzbereit</p>
+            <div class="cta-button-group">
+                <button class="interested-btn" onclick="openInterestModal()">❤️ Ich bin interessiert</button>
+            </div>
         </div>
 
         <div class="container highlights">
@@ -471,12 +599,12 @@
                 <div class="highlight-card">
                     <div class="icon">⛓️</div>
                     <h4>Railing-Befestigung</h4>
-                    <p>Sichere Montage direkt am Railing – robust und zuverlässig</p>
+                    <p>Sichere Befestigung an allen Railings – robust und zuverlässig</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">⚡</div>
                     <h4>Sehr schnelles Verstauen</h4>
-                    <p>In wenigen Sekunden verstaut – keine komplizierten Handgriffe</p>
+                    <p>In wenigen Sekunden verstaut – auf 25cm zusammengeklappt</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">✅</div>
@@ -523,17 +651,17 @@
                     <div class="detail-item">
                         <div class="icon">📐</div>
                         <h4>Abmessungen</h4>
-                        <p>80-120cm × 40-60cm</p>
+                        <p>40-160cm × H verstellbar</p>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">📦</div>
+                        <h4>Eingeklappt</h4>
+                        <p>Nur 25cm breit</p>
                     </div>
                     <div class="detail-item">
                         <div class="icon">⚖️</div>
                         <h4>Tragfähigkeit</h4>
                         <p>Bis zu 120 kg</p>
-                    </div>
-                    <div class="detail-item">
-                        <div class="icon">⌚</div>
-                        <h4>Garantie</h4>
-                        <p>10 Jahre Marine</p>
                     </div>
                     <div class="detail-item">
                         <div class="icon">🏅</div>
@@ -545,12 +673,32 @@
         </div>
     </div>
 
+    <!-- INTEREST MODAL -->
+    <div id="interestModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>❤️ Ich bin interessiert!</h2>
+                <button class="close-btn" onclick="closeInterestModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Geben Sie Ihre E-Mail-Adresse ein und wir informieren Sie über Neuigkeiten, Verfügbarkeit und spezielle Angebote!</p>
+            </div>
+            <form id="interestForm" onsubmit="submitInterestForm(event)">
+                <div class="form-group">
+                    <label for="interestEmail">E-Mail-Adresse *</label>
+                    <input type="email" id="interestEmail" name="email" required placeholder="ihre@email.de">
+                </div>
+                <button type="submit" class="submit-btn">Informiert bleiben ✉️</button>
+            </form>
+        </div>
+    </div>
+
     <!-- CONTACT SECTION -->
     <div class="contact-section" id="contact">
         <div class="container">
             <h2>📬 Kontakt & Feedback</h2>
             <div class="form-container">
-                <form id="contactForm">
+                <form id="contactForm" onsubmit="submitContactForm(event)">
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -619,9 +767,26 @@
             window.scrollTo(0, 0);
         }
 
-        // Form Submission Handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Interest Modal Functions
+        function openInterestModal() {
+            document.getElementById('interestModal').classList.add('show');
+        }
+
+        function closeInterestModal() {
+            document.getElementById('interestModal').classList.remove('show');
+        }
+
+        function submitInterestForm(event) {
+            event.preventDefault();
+            const email = document.getElementById('interestEmail').value;
+            alert(`Vielen Dank!\n\nWir werden Sie unter ${email} informieren.\n\nBis bald!`);
+            document.getElementById('interestForm').reset();
+            closeInterestModal();
+        }
+
+        // Contact Form Submission Handler
+        function submitContactForm(event) {
+            event.preventDefault();
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -629,13 +794,19 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Hier könnte eine echte Datenbank-Integration stattfinden
-            // Für jetzt: Erfolgs-Nachricht anzeigen
-            alert(`Vielen Dank, ${name}!\n\nIhr Feedback wurde empfangen:\n\n${subject}\n\nWir werden Ihnen bald unter ${email} antworten.`);
+            alert(`Vielen Dank, ${name}!\n\nIhr Feedback wurde empfangen.\n\nWir werden Ihnen bald unter ${email} antworten.`);
             
             // Form zurücksetzen
-            this.reset();
-        });
+            document.getElementById('contactForm').reset();
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('interestModal');
+            if (event.target == modal) {
+                closeInterestModal();
+            }
+        }
     </script>
 </body>
 </html>
