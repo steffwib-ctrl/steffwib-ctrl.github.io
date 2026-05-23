@@ -20,17 +20,17 @@
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 3rem 0;
+            padding: 2rem 0;
             text-align: center;
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             opacity: 0.95;
         }
 
@@ -70,36 +70,8 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        nav {
-            background: #f8f9fa;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 65px;
-            z-index: 99;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #764ba2;
-        }
-
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -112,124 +84,98 @@
             display: block;
         }
 
+        /* HERO SECTION */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem 0;
+            text-align: center;
         }
 
-        .hero-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero h2 {
+            font-size: 2.2rem;
             color: #667eea;
+            margin-bottom: 1rem;
         }
 
-        .hero-content p {
+        .hero p {
             font-size: 1.1rem;
-            margin-bottom: 1.5rem;
             color: #555;
-            line-height: 1.8;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .features {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #667eea;
         }
 
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
+        /* FEATURES - COMPACT */
+        .highlights {
+            background: white;
+            padding: 2rem 0;
         }
 
-        .gallery {
-            padding: 4rem 0;
-        }
-
-        .gallery h2 {
+        .highlights h3 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 1.8rem;
             color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            text-align: center;
+        }
+
+        .highlight-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card h4 {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* GALLERY - COMPACT */
+        .gallery {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .gallery h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 2rem;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            height: 250px;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.3s;
         }
@@ -238,178 +184,176 @@
             transform: scale(1.05);
         }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        .specs {
+        /* DETAILS SECTION */
+        .details {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 2.5rem 0;
+            margin: 2rem 0;
+            border-radius: 10px;
         }
 
-        .specs h2 {
+        .details h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
         }
 
-        .specs-grid {
+        .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
         }
 
-        .spec-item {
+        .detail-item {
             text-align: center;
         }
 
-        .spec-item h3 {
-            font-size: 1.3rem;
+        .detail-item .icon {
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
-        .spec-item p {
-            font-size: 1.1rem;
+        .detail-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-item p {
+            font-size: 0.9rem;
             opacity: 0.95;
         }
 
-        .details {
-            padding: 4rem 0;
+        /* CONTACT FORM */
+        .contact-section {
             background: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 3rem;
         }
 
-        .details h2 {
+        .contact-section h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2rem;
             color: #333;
+            margin-bottom: 2rem;
         }
 
-        .details-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .details-text h3 {
-            font-size: 1.5rem;
-            color: #667eea;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-
-        .details-text h3:first-child {
-            margin-top: 0;
-        }
-
-        .details-text p {
-            color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .details-text ul {
-            list-style-position: inside;
-            color: #555;
-        }
-
-        .details-text li {
-            margin-bottom: 0.5rem;
-            line-height: 1.8;
-        }
-
-        .details-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .benefits {
-            padding: 4rem 0;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-item {
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            border-left: 5px solid #667eea;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .benefit-item h3 {
-            color: #667eea;
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
             margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
         }
 
-        .benefit-item p {
-            color: #666;
-            line-height: 1.8;
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
         }
 
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* FOOTER */
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 4rem;
+            padding: 2rem 0;
+            margin-top: 2rem;
         }
 
+        footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .details-content {
-                grid-template-columns: 1fr;
-            }
-
             header h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content h2 {
                 font-size: 1.8rem;
             }
 
-            nav ul {
-                gap: 1rem;
-            }
-
             .tab-buttons .container {
+                flex-direction: column;
                 gap: 0.5rem;
             }
 
             .tab-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
+                width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .gallery-item {
+                height: 150px;
             }
         }
     </style>
@@ -417,433 +361,242 @@
 <body>
     <header>
         <h1>🍽️ RailDine</h1>
-        <p>Die Zukunft des Outdoor-Essens</p>
+        <p>Premium Möbel für Balkon & Marine</p>
     </header>
 
     <div class="tab-buttons">
         <div class="container">
-            <button class="tab-btn active" onclick="switchTab('balcony')">🏠 Balkon</button>
-            <button class="tab-btn" onclick="switchTab('marine')">⛵ Marine</button>
+            <button class="tab-btn active" onclick="switchTab('balcony', event)">🏠 Balkon</button>
+            <button class="tab-btn" onclick="switchTab('marine', event)">⛵ Marine</button>
         </div>
     </div>
 
     <!-- BALKON TAB -->
     <div id="balcony" class="tab-content active">
-        <nav>
-            <ul>
-                <li><a href="#balcony-features">Funktionen</a></li>
-                <li><a href="#balcony-gallery">Galerie</a></li>
-                <li><a href="#balcony-details">Details</a></li>
-                <li><a href="#balcony-benefits">Vorteile</a></li>
-                <li><a href="#balcony-specs">Spezifikationen</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <div class="container">
-            <section class="hero">
-                <div class="hero-content">
-                    <h2>Modernes Balkon-Esserlebnis</h2>
-                    <p>Entdecken Sie RailDine – den revolutionären Balkontisch, der Ihren Außenbereich in ein stilvolles, funktionales Heiligtum verwandelt. Speziell für zeitgenössisches Leben designt.</p>
-                    <p>Perfekt für Morgenkaffee, Abendessen oder einfach nur um die Aussicht zu genießen. Unser Balkontisch ist so konstruiert, dass er jedem Klima standhält.</p>
-                    <a href="#balcony-gallery" class="cta-button">Unsere Kollektion erkunden</a>
-                </div>
-                <div class="hero-image">
-                    <img src="HTR2.jpeg" alt="Moderner Balkontisch">
-                </div>
-            </section>
+        <div class="hero container">
+            <h2>Moderner Balkontisch für Ihr Zuhause</h2>
+            <p>Stilvoll, funktional und wetterfest – für perfekte Momente auf dem Balkon</p>
         </div>
 
-        <section class="features" id="balcony-features">
-            <div class="container">
-                <h2>Premium Funktionen</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3>Wetterbeständig</h3>
-                        <p>Gebaut mit Premium-Materialien, die extreme Wetterbedingungen, UV-Strahlen und Feuchtigkeit widerstehen.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">♻️</div>
-                        <h3>Umweltfreundlich</h3>
-                        <p>Aus nachhaltigen, recycelbaren Materialien gefertigt. Umweltbewusste Gestaltung für eine grünere Zukunft.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Modernes Design</h3>
-                        <p>Elegante, zeitgenössische Ästhetik, die zu jedem Balkonstil passt. In mehreren Farben und Oberflächenfinishes erhältlich.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📦</div>
-                        <h3>Platzsparend</h3>
-                        <p>Kompaktes Design mit intelligenten Lagerlösungen. Perfekt für kleine Balkone und städtisches Leben.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💪</div>
-                        <h3>Hohe Tragfähigkeit</h3>
-                        <p>Unterstützt bis zu 100kg. Robuste Konstruktion für jahrelange Zuverlässigkeit im täglichen Gebrauch.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🧹</div>
-                        <h3>Einfache Wartung</h3>
-                        <p>Einfach zu reinigen und zu pflegen. Einfach mit einem feuchten Tuch abwischen – keine spezielle Pflege erforderlich.</p>
-                    </div>
+        <div class="container highlights">
+            <h3>🎯 Besondere Merkmale</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="icon">📏</div>
+                    <h4>Stufenlos ausziehbar</h4>
+                    <p>Flexible Größenanpassung für jeden Raum – von kompakt bis großzügig</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">⬆️</div>
+                    <h4>Stufenlos höhenverstellbar</h4>
+                    <p>Perfekte Arbeitshöhe von 40-80cm – ergonomisch für alle</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">📦</div>
+                    <h4>Einklappbar</h4>
+                    <p>Platzsparendes Design – schnell verstaut, wenig Lagerplatz</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🔒</div>
+                    <h4>Stabile Befestigung</h4>
+                    <p>Sichere Verankerung am Geländer – sicherer Stand in jeder Situation</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🛡️</div>
+                    <h4>Wetterbeständig</h4>
+                    <p>UV- und feuchtigkeitsresistent – für alle Jahreszeiten</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">♻️</div>
+                    <h4>Nachhaltiges Material</h4>
+                    <p>Premium-Aluminium und recycelbares Komposit</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="gallery" id="balcony-gallery">
-            <div class="container">
-                <h2>Galerie - RailDine Balkontische in Aktion</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Balkontisch in Sonnenlicht">
-                        <div class="gallery-caption">Elegante Tischdecke</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Balkontisch mit Stadtblick">
-                        <div class="gallery-caption">Premium Textur</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Minimalistischer Balkontisch">
-                        <div class="gallery-caption">Modern & Elegant</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Balkontisch zum Essen">
-                        <div class="gallery-caption">Perfektes Essen</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Kompakter Balkontisch">
-                        <div class="gallery-caption">Platzsparendes Design</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Balkontisch mit Pflanzen">
-                        <div class="gallery-caption">Garten-Ambiente</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Zeitgenössischer Balkontisch">
-                        <div class="gallery-caption">Zeitgenössisches Flair</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Luxuriöser Balkon">
-                        <div class="gallery-caption">Luxusleben</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Balkontisch bei Sonnenuntergang">
-                        <div class="gallery-caption">Sonnenuntergangsblicke</div>
-                    </div>
+        <div class="container gallery">
+            <h3>📸 Galerie</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="HTR2.jpeg" alt="Balkontisch 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="HTR3.jpeg" alt="Balkontisch 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="HTR4.jpeg" alt="Balkontisch 3">
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="details" id="balcony-details">
-            <div class="container">
-                <h2>Warum RailDine wählen?</h2>
-                <div class="details-content">
-                    <div class="details-text">
-                        <h3>Überlegene Qualität & Haltbarkeit</h3>
-                        <p>Unsere RailDine Balkontische werden mit Präzisionsingenieurwesen und Premium-Materialien hergestellt. Jedes Stück wird einer rigorosen Qualitätsprüfung unterzogen.</p>
-                        
-                        <h3>Innovative Funktionen</h3>
-                        <p>Wir haben jeden Aspekt mit dem modernen Hausbesitzer im Hinterkopf gestaltet:</p>
-                        <ul>
-                            <li>Verstärktes Aluminiumgestell für maximale Festigkeit</li>
-                            <li>UV-beständige Kompositoberfläche</li>
-                            <li>Integriertes Kabelmanagement-System</li>
-                            <li>Verborgene Lagerfächer</li>
-                            <li>Klappbare Beine zur einfachen Lagerung</li>
-                            <li>Rutschfeste Füße für Sicherheit</li>
-                        </ul>
-
-                        <h3>Perfekt für jede Jahreszeit</h3>
-                        <p>Ob glühende Sommerhitze, Starkregen oder Frost – RailDine behält seine strukturelle Integrität und Ästhetik das ganze Jahr über.</p>
+        <div class="container">
+            <div class="details">
+                <h3>✨ Technische Details</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="icon">📐</div>
+                        <h4>Abmessungen</h4>
+                        <p>80-120cm × 40-60cm</p>
                     </div>
-                    <div class="details-image">
-                        <img src="HTR2.jpeg" alt="Balkontisch Details">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="benefits" id="balcony-benefits">
-            <div class="container">
-                <h2>Hauptvorteile</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <h3>💰 Kosteneffektiv</h3>
-                        <p>Premium-Qualität zu erschwinglichem Preis. Erhalten Sie Luxus-Gartenmöbel, ohne die Bank zu sprengen.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🔧 Einfache Montage</h3>
-                        <p>Kommt mit klaren Anweisungen und allem notwendigen Hardware. Die meisten Benutzer können ihren Tisch in unter 30 Minuten aufstellen.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🌍 Nachhaltig</h3>
-                        <p>Aus recycelten und recycelbaren Materialien. Wir sind dem Schutz unseres ökologischen Fußabdrucks verpflichtet.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🎯 Vielseitig</h3>
-                        <p>Funktioniert als Esstisch, Couchtisch, Arbeitstisch oder Pflanzenständer. Ein Tisch, unendliche Möglichkeiten.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>✨ Wartungsarm</h3>
-                        <p>Keine Schleifen, Beizen oder spezielle Behandlungen erforderlich. Regelmäßiges Reinigen hält ihn wie neu aus.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🏆 Preisgekrönt</h3>
-                        <p>Anerkannt für Innovation und Designexzellenz. Schließen Sie sich tausenden zufriedenen Kunden weltweit an.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="specs" id="balcony-specs">
-            <div class="container">
-                <h2>Technische Spezifikationen</h2>
-                <div class="specs-grid">
-                    <div class="spec-item">
-                        <h3>Abmessungen</h3>
-                        <p>120cm × 60cm × 45cm</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Gewicht</h3>
-                        <p>8,5 kg (leicht zu transportieren)</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Material</h3>
-                        <p>Premium Aluminium & Komposit</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Tragfähigkeit</h3>
+                    <div class="detail-item">
+                        <div class="icon">⚖️</div>
+                        <h4>Tragfähigkeit</h4>
                         <p>Bis zu 100 kg</p>
                     </div>
-                    <div class="spec-item">
-                        <h3>Garantie</h3>
-                        <p>5-jährige Abdeckung</p>
+                    <div class="detail-item">
+                        <div class="icon">⌚</div>
+                        <h4>Garantie</h4>
+                        <p>5 Jahre Abdeckung</p>
                     </div>
-                    <div class="spec-item">
-                        <h3>Farboptionen</h3>
-                        <p>Modernes Grau, Mitternachtsschwarz, Arktisches Weiß</p>
+                    <div class="detail-item">
+                        <div class="icon">🎨</div>
+                        <h4>Farben</h4>
+                        <p>3 Premium-Varianten</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- MARINE TAB -->
     <div id="marine" class="tab-content">
-        <nav>
-            <ul>
-                <li><a href="#marine-features">Funktionen</a></li>
-                <li><a href="#marine-gallery">Galerie</a></li>
-                <li><a href="#marine-details">Details</a></li>
-                <li><a href="#marine-benefits">Vorteile</a></li>
-                <li><a href="#marine-specs">Spezifikationen</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <div class="container">
-            <section class="hero">
-                <div class="hero-content">
-                    <h2>Professionelle Boot-Lösungen</h2>
-                    <p>Entdecken Sie RailDine Marine – speziell für Boote und Yachten entwickelt. Robust, wetterfest und elegant für das Leben auf dem Wasser.</p>
-                    <p>Perfekt für Deck-Dining, Entspannung und Unterhaltung auf Ihrer Yacht oder Ihrem Boot. Engineering auf höchstem Niveau für die Meere.</p>
-                    <a href="#marine-gallery" class="cta-button">Unsere Marine-Kollektion erkunden</a>
-                </div>
-                <div class="hero-image">
-                    <img src="HTR3.jpeg" alt="Luxusboot mit Deck">
-                </div>
-            </section>
+        <div class="hero container">
+            <h2>Marine-Tisch für Ihr Boot oder Ihre Yacht</h2>
+            <p>Professionelle Lösung für Deck und Railing – immer einsatzbereit</p>
         </div>
 
-        <section class="features" id="marine-features">
-            <div class="container">
-                <h2>Marine Premium Funktionen</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🌊</div>
-                        <h3>Salzwasserbeständig</h3>
-                        <p>Speziell behandelt gegen Salzwasserkorriosion. Hält auch in den anspruchsvollsten Meeresumgebungen.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚓</div>
-                        <h3>Rutschfest</h3>
-                        <p>Marinespezifische rutschfeste Oberfläche. Sicherheit ist unsere höchste Priorität auf dem Wasser.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Yacht-Design</h3>
-                        <p>Elegantes Design, das auf modernen Yachten und Booten perfekt aussieht. Premium-Oberflächenfinish.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📦</div>
-                        <h3>Platzsparend</h3>
-                        <p>Optimiert für begrenzte Bootsfläche. Platzsparende Konstruktion ohne Kompromiße bei Funktionalität.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💪</div>
-                        <h3>Marine-Grad Festigkeit</h3>
-                        <p>Verstärkt für Schiffsbedingungen. Hält extremen Bedingungen und Bewegungen stand.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🧹</div>
-                        <h3>Einfache Seepflege</h3>
-                        <p>Salzwasser-freundliche Reinigung. Schnell und einfach sauber zu halten, auch bei langen Reisen.</p>
-                    </div>
+        <div class="container highlights">
+            <h3>⚓ Spezielle Marine-Features</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="icon">⛓️</div>
+                    <h4>Railing-Befestigung</h4>
+                    <p>Sichere Montage direkt am Railing – robust und zuverlässig</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">⚡</div>
+                    <h4>Sehr schnelles Verstauen</h4>
+                    <p>In wenigen Sekunden verstaut – keine komplizierten Handgriffe</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">✅</div>
+                    <h4>Immer einsatzbereit</h4>
+                    <p>Schnell aufgebaut – jederzeit für spontane Pausen</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">📍</div>
+                    <h4>Platz für Deckarbeiten</h4>
+                    <p>Kompakt verstaut – voller Deck-Platz für alle Arbeiten</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🌊</div>
+                    <h4>Salzwasserresistent</h4>
+                    <p>Marine-Grade Material – getestet für raue Bedingungen</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🔒</div>
+                    <h4>Rutschfest</h4>
+                    <p>Spezielle Oberfläche – sicher auch in Bewegung</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="gallery" id="marine-gallery">
-            <div class="container">
-                <h2>Galerie - RailDine Marine in Aktion</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Luxusboot">
-                        <div class="gallery-caption">Luxusyacht</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Boot bei Sonnenuntergang">
-                        <div class="gallery-caption">Sonnenuntergang auf See</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Segelboot">
-                        <div class="gallery-caption">Segelboot</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Yacht im Hafen">
-                        <div class="gallery-caption">Yacht im Hafen</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Motorboot">
-                        <div class="gallery-caption">Modernes Motorboot</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Deck-Bereich">
-                        <div class="gallery-caption">Luxus Deck</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR2.jpeg" alt="Yacht Dining">
-                        <div class="gallery-caption">Yacht Dining</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR3.jpeg" alt="Offenes Meer">
-                        <div class="gallery-caption">Offenes Meer</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="HTR4.jpeg" alt="Bootsleben">
-                        <div class="gallery-caption">Leben auf dem Wasser</div>
-                    </div>
+        <div class="container gallery">
+            <h3>📸 Galerie</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="HTR2.jpeg" alt="Yacht-Tisch 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="HTR3.jpeg" alt="Yacht-Tisch 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="HTR4.jpeg" alt="Yacht-Tisch 3">
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="details" id="marine-details">
-            <div class="container">
-                <h2>Marine Exzellenz</h2>
-                <div class="details-content">
-                    <div class="details-text">
-                        <h3>Schiffszertifizierte Qualität</h3>
-                        <p>RailDine Marine wird nach internationalen Schiffsnormen hergestellt. Jede Komponente ist für die raue Meeresumgebung optimiert.</p>
-                        
-                        <h3>Fortgeschrittene Marine-Funktionen</h3>
-                        <p>Entwickelt speziell für Boote und Yachten:</p>
-                        <ul>
-                            <li>Salzwasser-korrosionsbeständige Materialien</li>
-                            <li>Marine-grade rutschfeste Oberfläche</li>
-                            <li>Integriertes Wasserablaufsystem</li>
-                            <li>UV-stabile Marinelacke</li>
-                            <li>Schnelle Montage für Boote</li>
-                            <li>Einfache Demontage für Transport</li>
-                        </ul>
-
-                        <h3>Ideal für Langfahrten</h3>
-                        <p>Ob Mittelmeer, Karibik oder offene See – RailDine Marine ist die perfekte Wahl für professionelle Skipper und private Yachteigner.</p>
+        <div class="container">
+            <div class="details">
+                <h3>⚓ Technische Details (Marine)</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="icon">📐</div>
+                        <h4>Abmessungen</h4>
+                        <p>80-120cm × 40-60cm</p>
                     </div>
-                    <div class="details-image">
-                        <img src="HTR4.jpeg" alt="Marine Details">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="benefits" id="marine-benefits">
-            <div class="container">
-                <h2>Marine Vorteile</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <h3>💰 Investitionswert</h3>
-                        <p>Premium-Marine-Ausrüstung zu vergleichbaren Preisen. Erhöht den Wert Ihrer Yacht.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🔧 Schnelle Installation</h3>
-                        <p>Marinespezifische Befestigung. Einfache Installation an Deck ohne Spezialkenntnisse.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🌊 Salzwasserresistent</h3>
-                        <p>Getestet in rauen Meeresumgebungen. Widersteht jahrelang Salzwasser und UV-Strahlung.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>⚓ Sicher & Stabil</h3>
-                        <p>Rutschfeste Oberfläche und sichere Befestigung. Perfekt für bewegte Bedingungen auf See.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>✨ Elegantes Design</h3>
-                        <p>Verbessert die Ästhetik jeder Yacht. Premium-Oberflächenfinish für luxuriöse Boote.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>🏆 Professionelles Standard</h3>
-                        <p>Vertraut von Charter-Yachten und Privateignern. Marine-Industrie bewährt.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="specs" id="marine-specs">
-            <div class="container">
-                <h2>Marine Spezifikationen</h2>
-                <div class="specs-grid">
-                    <div class="spec-item">
-                        <h3>Abmessungen</h3>
-                        <p>120cm × 60cm × 45cm</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Gewicht</h3>
-                        <p>9,2 kg (Marine-Verstärkung)</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Material</h3>
-                        <p>Marinealuminium & Komposit</p>
-                    </div>
-                    <div class="spec-item">
-                        <h3>Tragfähigkeit</h3>
+                    <div class="detail-item">
+                        <div class="icon">⚖️</div>
+                        <h4>Tragfähigkeit</h4>
                         <p>Bis zu 120 kg</p>
                     </div>
-                    <div class="spec-item">
-                        <h3>Garantie</h3>
-                        <p>10-jährige Marine-Garantie</p>
+                    <div class="detail-item">
+                        <div class="icon">⌚</div>
+                        <h4>Garantie</h4>
+                        <p>10 Jahre Marine</p>
                     </div>
-                    <div class="spec-item">
-                        <h3>Zertifizierung</h3>
-                        <p>ISO 12944 - Meeresbedingungen</p>
+                    <div class="detail-item">
+                        <div class="icon">🏅</div>
+                        <h4>Zertifikat</h4>
+                        <p>ISO 12944</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <footer id="contact">
+    <!-- CONTACT SECTION -->
+    <div class="contact-section" id="contact">
         <div class="container">
-            <h2>Holen Sie sich Ihr RailDine Heute</h2>
+            <h2>📬 Kontakt & Feedback</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Betreff *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Feedback absenden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h3>🍽️ RailDine</h3>
             <p>&copy; 2026 RailDine. Alle Rechte vorbehalten.</p>
-            <p style="margin-top: 1rem; font-size: 1.1rem;">📧 E-Mail: info@raildine.de | 📞 Telefon: +49 (40) 123-4567</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Transformieren Sie Ihren Außenbereich. Verbessern Sie Ihren Lebensstil. Wählen Sie RailDine.</p>
+            <div class="contact-info">
+                <p>📧 E-Mail: <strong>info@raildine.de</strong></p>
+                <p>📞 Telefon: <strong>+49 (40) 123-4567</strong></p>
+            </div>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">✨ Transformieren Sie Ihren Außenbereich. Verbessern Sie Ihren Lebensstil. Wählen Sie RailDine.</p>
         </div>
     </footer>
 
     <script>
-        function switchTab(tabName) {
+        function switchTab(tabName, event) {
             // Verstecke alle Tab-Inhalte
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
@@ -861,7 +614,28 @@
 
             // Setze den Button als aktiv
             event.target.classList.add('active');
+
+            // Scroll nach oben
+            window.scrollTo(0, 0);
         }
+
+        // Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Hier könnte eine echte Datenbank-Integration stattfinden
+            // Für jetzt: Erfolgs-Nachricht anzeigen
+            alert(`Vielen Dank, ${name}!\n\nIhr Feedback wurde empfangen:\n\n${subject}\n\nWir werden Ihnen bald unter ${email} antworten.`);
+            
+            // Form zurücksetzen
+            this.reset();
+        });
     </script>
 </body>
 </html>
